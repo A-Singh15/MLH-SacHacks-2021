@@ -1,6 +1,6 @@
 import './search.scss'
 
-import Dropdown from './dropdown'
+import Dropdown, { SearchArea } from './dropdown'
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from 'react'
 
@@ -8,6 +8,8 @@ import {
     useRecoilState, useRecoilValue
 } from 'recoil'
 import { atom_SearchParams } from '../../utils/atoms'
+
+import covidpng from './covidcard.png'
 
 const fadeInUp = {
     initial: {
@@ -45,11 +47,12 @@ export default function Search() {
 
     const [isVisible, setVisible] = useState(false);
     const searchParams = useRecoilValue(atom_SearchParams)
-
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         if (!searchParams.searchType) {
             return
         }
+        setLoading(false)
         if (
             searchParams.searchType !== "not selected" &&
             searchParams.location !== "not selected"
@@ -59,7 +62,13 @@ export default function Search() {
             }
         }
     })
-
+    if (loading) {
+        return (
+            <div>
+                loading
+            </div>
+        )
+    }
     return (
         <div className='search-page'>
             <AnimatePresence>
@@ -84,8 +93,9 @@ export default function Search() {
                         animate={fadeInUp.animate}
                         key='content'
                     >
-                        <div>
-                            hello
+                        <div className='search-content'>
+                            <SearchArea />
+                            <SearchResults />
                         </div>
                     </motion.div>
                 )}
@@ -96,12 +106,62 @@ export default function Search() {
 }
 
 
-function Tags() {
 
+function SearchResults() {
+
+    const searchParams = useRecoilValue(atom_SearchParams)
+
+    //if doesnt need map from params
+    //show only cards
 
     return (
-        <div>
-            covid
+        <div className='search-results-wrapper'>
+            <div className='search-results-cards'
+                style={{
+                    width: searchParams.searchType == 'OnlineEvent' ? '100%' : '50%'
+                }}
+            >
+                <SearchResultCard />
+            </div>
+            {searchParams.searchType !== 'OnlineEvent' && (
+                <div className='search-results-map'>
+                    map here
+                </div>
+            )}
+
+        </div>
+    )
+}
+
+function SearchResultCard() {
+
+    const cardTags = ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest',]
+
+    return (
+        <div className='card-wrapper'>
+            <div className='card-background'>
+            </div>
+            <div className='card-image'>
+
+            </div>
+            <div className='card-desc'>
+                <div className='card-tags'>
+                    {cardTags.map(item => (
+                        <span className='card-tag' key={item}>
+                            {item}
+                        </span>
+                    ))}
+                </div>
+                <div className='card-title'>
+                    COVID-19 Relief: Free Testing & Masks
+                </div>
+                <div className='card-address'>
+                    635 Anderson Rd, Davis, CA
+                </div>
+                <div className='card-body'>
+                    lorem ipsum!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, sed do...
+                </div>
+            </div>
         </div>
     )
 
