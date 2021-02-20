@@ -36,11 +36,15 @@
     font-family: $font-lato;
     border: solid 1px $darkbrown;
     outline: none;
+
+    .small {
+    }
 }
 
 //centered
 .motion-search {
     position: absolute;
+    opacity: 0;
 }
 
 .bigQ {
@@ -48,4 +52,10 @@
     position: absolute;
     left: 50vw;
     top: 50vh;
+}
+
+.search-content {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
 }
