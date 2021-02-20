@@ -7,9 +7,45 @@ body,
     margin: 0;
     padding: 0;
     font-family: $font-lato;
+    background: $white;
+}
+
+.nav-bar {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    height: calcvw(120);
+    background: $white;
 }
 
 .nav-item {
     cursor: pointer;
     user-select: none;
+    font-size: calcvw(24);
+}
+
+.nav-home {
+    position: absolute;
+    left: calcvw(90);
+    top: calcvw(75);
+    #logoWithName {
+        height: calcvw(70);
+    }
+}
+
+.nav-search {
+    position: absolute;
+    left: calcvw(1545);
+    top: calcvw(75);
+}
+.nav-about {
+    position: absolute;
+    left: calcvw(1369);
+    top: calcvw(75);
+}
+.nav-account {
+    position: absolute;
+    left: calcvw(1712);
+    top: calcvw(75);
 }

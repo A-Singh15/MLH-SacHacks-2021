@@ -26,7 +26,7 @@
     background-image: url("./arrowdown.svg"); /* Add custom arrow */
     background-repeat: no-repeat;
     background-position: right 5% bottom 50%;
-    background-size: 3vw;
+    background-size: inherit;
     width: 30%;
     height: inherit;
     padding: 0 calcvw(40);
@@ -36,9 +36,7 @@
     font-family: $font-lato;
     border: solid 1px $darkbrown;
     outline: none;
-
-    .small {
-    }
+    background-color: $white;
 }
 
 //centered
@@ -58,4 +56,50 @@
     width: 100vw;
     height: 100vh;
     position: absolute;
+}
+
+.tag-wrapper {
+    //position: absolute;
+    //top: calcvw(262.5);
+    width: calcvw(1741);
+    display: flex;
+    margin: 34px 0;
+}
+
+.tag-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 0 3px;
+    background: $white;
+    border-radius: 32px;
+    border: solid 2px $darkbrown;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        background: #d0943b;
+    }
+    &.selected {
+        background: $gold;
+    }
+}
+
+.search-results-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    top: calcvw(361);
+    left: calcvw(90);
+    height: calc(100% - 180px);
+    width: calcvw(1740);
+    background: red;
+
+    display: flex;
+    > * {
+        width: 50%;
+        background: yellow;
+    }
+}
+
+.card-wrapper {
+    width: 382px;
 }

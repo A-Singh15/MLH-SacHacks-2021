@@ -10,6 +10,7 @@ import './App.scss'
 import Home from './home/home'
 import Search from './search/search'
 
+import { logoWithName } from '../assets/assets'
 
 /**
  * ANCHOR: APP
@@ -69,14 +70,27 @@ function NavBar() {
 
 const routes = [
   {
+    to: '/account',
+    children: <div className='nav-account'>Account</div>,
+    component: <Search />,
+    navbar: true
+  }, {
     to: '/search',
     children: <div className='nav-search'>Search</div>,
     component: <Search />,
     navbar: true
-  },
-  {
+  }, {
+    to: '/about',
+    children: <div className='nav-about'>About</div>,
+    component: <Search />,
+    navbar: true
+  }, {
     to: '/',
-    children: <div className='nav-home'>Home</div>,
+    children: (
+      <div className='nav-home'>
+        {logoWithName}
+      </div>
+    ),
     component: <Home />,
     navbar: true
   }
