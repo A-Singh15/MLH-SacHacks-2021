@@ -2,11 +2,19 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useHistory
 } from "react-router-dom";
+import './App.scss'
 
 import Home from './home/home'
+import Search from './search/search'
 
+
+/**
+ * ANCHOR: APP
+ * 
+ */
 
 export default function App() {
   return (
@@ -46,35 +54,50 @@ function NavBar() {
   )
 }
 
-const routes = [
 
+/**
+ * ANCHOR: ROUTES
+ * 
+ */
+
+// {
+//   to: '/ourvision',
+//   children: <div className='nav-vision'>Our Vision</div>,
+//   component: <Solutions />,
+//   navbar: true
+// },
+
+const routes = [
   {
-    to: '/ourvision',
-    children: <div className='nav-vision'>Our Vision</div>,
-    component: <Solutions />,
+    to: '/search',
+    children: <div className='nav-search'>Search</div>,
+    component: <Search />,
     navbar: true
-  },
-  {
-    to: '/about',
-    children: <div className='nav-about'>About</div>,
-    component: <About />,
-    navbar: true
-  },
-  {
-    to: '/login',
-    children: <div className='nav-login'>Sign In/ Sign Up</div>,
-    component: <Login />,
-    navbar: true
-  },
-  {
-    to: '/dashboard',
-    component: <Dashboard />,
-    navbar: false
   },
   {
     to: '/',
-    children: pillrlogo,
+    children: <div className='nav-home'>Home</div>,
     component: <Home />,
     navbar: true
-  },
+  }
 ]
+
+
+/** 
+ * ANCHOR: CUSTOMLINK
+*/
+
+export function CustomLink(props) {
+  let history = useHistory();
+
+  function handleClick() {
+    history.push(props.to);
+  }
+  return (
+    <div {...props}
+      onClick={handleClick}
+    >
+      {props.children}
+    </div>
+  )
+}

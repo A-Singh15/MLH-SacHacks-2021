@@ -1,0 +1,51 @@
+@import "../variables.scss";
+
+.search-page {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.search-form {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+.search-form-text {
+    font-size: inherit;
+    color: $gold;
+    display: flex;
+    align-items: center;
+}
+
+.search-dropdown {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; /* Remove default arrow */
+    background-image: url("./arrowdown.svg"); /* Add custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 5% bottom 50%;
+    background-size: 3vw;
+    width: 30%;
+    height: inherit;
+    padding: 0 calcvw(40);
+    border-radius: 4vw;
+
+    font-size: inherit;
+    font-family: $font-lato;
+    border: solid 1px $darkbrown;
+    outline: none;
+}
+
+//centered
+.motion-search {
+    position: absolute;
+}
+
+.bigQ {
+    font-size: calcvw(64);
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+}

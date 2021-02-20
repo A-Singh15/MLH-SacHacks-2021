@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Lato";
+    src: url("../assets/lato/Lato-Regular.ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../assets/lato/Lato-Bold.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Lato";
+    src: url("../assets/lato/Lato-Black.ttf");
+    font-weight: bolder;
+}
+//set css variables
+:root {
+    --white: #f3f6f4;
+    --gray: #99a5ae;
+    --gold: #efb661;
+    --brown: #a7704c;
+    --darkbrown: #433d43;
+
+    --lato: "Lato", sans-serif;
+}
+//then call css variables as css variables
+$white: var(--white);
+$gray: var(--gray);
+$gold: var(--gold);
+$brown: var(--brown);
+$darkbrown: var(--darkbrown);
+
+$font-lato: var(--lato);
+
+@function calcvw($pxvalue) {
+    @return (1vw * ($pxvalue / 19.2));
+}
+
+@mixin calcpos($x, $y) {
+    left: calcvw($x);
+    top: calcvw($y);
+}
+@mixin calcWidthHeight($width, $height) {
+    width: calcvw($width);
+    height: calcvw($height);
+}
+@mixin calcall($x, $y, $width, $height) {
+    @include calcpos($x, $y);
+    @include calcWidthHeight($width, $height);
+}
+@mixin center($width, $height) {
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-1px * $width/2, -1px * $height/2);
+}

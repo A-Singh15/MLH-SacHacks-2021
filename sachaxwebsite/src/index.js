@@ -5,7 +5,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 import {
-  RecoilRoot,
+  RecoilRoot
 } from 'recoil';
 
 ReactDOM.render(
