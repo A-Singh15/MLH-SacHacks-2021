@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
+import { ToastContainer } from 'react-toastify';
 import {
   RecoilRoot
 } from 'recoil';
@@ -12,6 +13,9 @@ ReactDOM.render(
   <React.StrictMode>
 
     <RecoilRoot>
+      <ToastContainer>
+      </ToastContainer>
+
       <App />
     </RecoilRoot>
 

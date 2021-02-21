@@ -1,0 +1,133 @@
+@import "../variables.scss";
+.err-404 {
+    position: absolute;
+    top: 300px;
+}
+
+.event-page {
+    width: 100vw;
+    height: calc(100vh - 200px);
+    padding-top: 200px;
+    overflow: auto;
+}
+
+.event-header {
+    position: relative;
+    background: $gold;
+    border-radius: 6px;
+    padding: 37px;
+    margin-left: 120px;
+
+    width: 1300px;
+    .event-date {
+        font-size: 24px;
+    }
+    .event-title {
+        font-size: 48px;
+        margin: 10px 0;
+    }
+    .event-host {
+        font-size: 24px;
+    }
+}
+
+.event-page-content {
+    border-radius: 6px;
+    background: $brown;
+    width: 1559px;
+    margin-top: -100px;
+    margin-left: calcvw(90);
+    padding: 130px 90px;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.event-intro {
+    display: flex;
+    justify-content: space-between;
+
+    .desc-wrapper {
+        width: 1050px;
+
+        .event-img {
+            width: 1000px;
+            height: 540px;
+            margin-left: 24px;
+        }
+    }
+    .links-wrapper {
+        width: 450px;
+    }
+}
+
+.event-desc-wrapper {
+    margin-top: -500px;
+    padding-top: 500px;
+    padding-bottom: 36px;
+    background: $white;
+    border-radius: 6px;
+    > * {
+        padding: 0 24px;
+        margin-bottom: 15px;
+    }
+    .desc-tags {
+        display: flex;
+        padding: 24px;
+    }
+    .desc-tag {
+        padding: 15px;
+        border: solid 2px $darkbrown;
+        border-radius: 32px;
+        margin-right: 6px;
+        background: $gold;
+    }
+    .desc-title {
+        font-size: 26px;
+        color: $brown;
+    }
+    .desc-body {
+        font-size: 26px;
+        font-weight: bold;
+    }
+}
+
+.links-website {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border-radius: 6px;
+    background: $white;
+    .image-wrapper {
+    }
+    .website-info {
+        width: 230px;
+        font-size: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .website-title {
+        }
+        .website-link {
+            color: $gold;
+        }
+    }
+}
+.links-extras {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 6px;
+    background: $white;
+    margin-top: 30px;
+    font-weight: bold;
+    > * {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        > * {
+            margin-right: 27px;
+        }
+    }
+}

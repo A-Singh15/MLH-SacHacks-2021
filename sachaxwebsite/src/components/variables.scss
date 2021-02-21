@@ -1,17 +1,20 @@
 @font-face {
     font-family: "Lato";
-    src: url("../assets/lato/Lato-Regular.ttf");
+    src: url("../assets/lato/Lato-Regular.ttf") format("truetype") font-weight-normal;
     font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: "Lato";
-    src: url("../assets/lato/Lato-Bold.ttf");
+    src: url("../assets/lato/Lato-Bold.ttf") format("truetype");
     font-weight: bold;
+    font-style: normal;
 }
 @font-face {
     font-family: "Lato";
-    src: url("../assets/lato/Lato-Black.ttf");
+    src: url("../assets/lato/Lato-Black.ttf") format("truetype");
     font-weight: bolder;
+    font-style: normal;
 }
 //set css variables
 :root {

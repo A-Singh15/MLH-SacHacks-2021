@@ -2,17 +2,21 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   useHistory
 } from "react-router-dom";
 import './App.scss'
 
 import Home from './home/home'
 import Search from './search/search'
+import About from './about/about'
+import Event from './event/event'
+import Login from './account/account'
+import Dashboard from './dashboard/dashboard'
 
+import { logoWithName } from '../assets/assets'
 
 /**
- * ANCHOR: APP
+ * ANCHOR: APP 
  * 
  */
 
@@ -21,6 +25,18 @@ export default function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path={'/event/:eventID'} >
+            <>
+              <Event />
+              {<NavBar />}
+            </>
+          </Route>
+          <Route path={'/dashboard'} >
+            <>
+              <Dashboard />
+              {<NavBar />}
+            </>
+          </Route>
 
           {routes.map((item, index) => (
             <Route key={index} path={item.to} >
@@ -69,14 +85,27 @@ function NavBar() {
 
 const routes = [
   {
+    to: '/account',
+    children: <div className='nav-account'>Account</div>,
+    component: <Login />,
+    navbar: true
+  }, {
     to: '/search',
     children: <div className='nav-search'>Search</div>,
     component: <Search />,
     navbar: true
-  },
-  {
+  }, {
+    to: '/about',
+    children: <div className='nav-about'>About</div>,
+    component: <About />,
+    navbar: true
+  }, {
     to: '/',
-    children: <div className='nav-home'>Home</div>,
+    children: (
+      <div className='nav-home'>
+        {logoWithName}
+      </div>
+    ),
     component: <Home />,
     navbar: true
   }

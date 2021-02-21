@@ -1,0 +1,217 @@
+@import "../variables.scss";
+
+.about-page {
+    width: 100vw;
+    height: 100vh;
+}
+
+.about-svg {
+    position: absolute;
+    left: 50vw;
+    top: 200px;
+    width: 1106px;
+    transform: translate(-1px * 1040/2);
+    z-index: 2;
+}
+
+.about-background {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    top: 80.3vh;
+    height: 19.7vh;
+    background-color: $brown;
+}
+
+#about-svg {
+    .cls-10,
+    .cls-11,
+    .cls-1,
+    .ppoppi {
+        cursor: pointer;
+    }
+}
+
+.info-card {
+    transition: transform 300ms, opacity 300ms;
+    position: absolute;
+    width: calcvw(369);
+    opacity: 0;
+    &.active {
+        opacity: 1;
+    }
+    .info-card-name {
+        color: $brown;
+    }
+    &.Brandon {
+        top: calcvw(257);
+        left: calcvw(90);
+        text-align: right;
+    }
+    &.Mai {
+        top: calcvw(257);
+        left: calcvw(1486);
+    }
+    &.Sally {
+        top: calcvw(457);
+        left: calcvw(90);
+        text-align: right;
+    }
+    &.PPoPPi {
+        top: calcvw(457);
+        left: calcvw(1486);
+    }
+}
+
+#about-svg {
+    .cls-1 {
+        fill: #f3f6f4;
+    }
+
+    .cls-2 {
+        fill: #99a5ae;
+    }
+
+    .cls-3 {
+        fill: #433d43;
+    }
+
+    .cls-4 {
+        fill: #75858e;
+    }
+
+    .cls-29,
+    .cls-31,
+    .cls-5 {
+        fill: #201d20;
+    }
+
+    .cls-6 {
+        fill: #db830f;
+    }
+
+    .cls-17,
+    .cls-20,
+    .cls-21,
+    .cls-32,
+    .cls-7,
+    .cls-8 {
+        fill: none;
+        stroke-miterlimit: 10;
+    }
+
+    .cls-7,
+    .cls-8 {
+        stroke: #f3f6f4;
+    }
+
+    .cls-7 {
+        stroke-width: 3px;
+    }
+
+    .cls-20,
+    .cls-21,
+    .cls-8 {
+        stroke-width: 2px;
+    }
+
+    .cls-9 {
+        fill: #9ebf36;
+    }
+
+    .cls-10 {
+        fill: #efb661;
+    }
+
+    .cls-11 {
+        fill: #a7704c;
+    }
+
+    .cls-12 {
+        fill: #566975;
+    }
+
+    .cls-13 {
+        fill: #111;
+    }
+
+    .cls-14 {
+        fill: #e6b8a2;
+    }
+
+    .cls-15 {
+        fill: #c68f77;
+    }
+
+    .cls-16 {
+        fill: #ff686b;
+    }
+
+    .cls-16,
+    .cls-27,
+    .cls-29 {
+        opacity: 0.5;
+    }
+
+    .cls-17 {
+        stroke: #99a5ae;
+    }
+
+    .cls-18 {
+        fill: #edc4b3;
+    }
+
+    .cls-19 {
+        fill: #deab90;
+    }
+
+    .cls-20,
+    .cls-21 {
+        stroke: #111;
+    }
+
+    .cls-20 {
+        opacity: 0.7;
+    }
+
+    .cls-22 {
+        fill: #f2c78f;
+    }
+
+    .cls-23 {
+        fill: #dde3e8;
+    }
+
+    .cls-24 {
+        fill: #d3a185;
+    }
+
+    .cls-25 {
+        fill: #e1c699;
+    }
+
+    .cls-26 {
+        fill: #fcf2d8;
+    }
+
+    .cls-27 {
+        fill: #ceb084;
+    }
+
+    .cls-28 {
+        opacity: 0.9;
+    }
+
+    .cls-30 {
+        fill: #5d98b5;
+    }
+
+    .cls-31 {
+        opacity: 0.3;
+    }
+
+    .cls-32 {
+        stroke: #433d43;
+        stroke-width: 4px;
+    }
+}

@@ -1,0 +1,91 @@
+@import "../variables.scss";
+
+.home-page {
+    width: 100vw;
+    height: 100vh;
+}
+
+.home-loading {
+    position: absolute;
+    top: 22.5vw;
+    left: 40.5vw;
+
+    height: 8.854vw;
+    width: 19vw;
+    z-index: 4;
+    font-size: calcvw(36);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.backdrop {
+    background: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+}
+
+.loading-logo {
+    width: calcvw(70);
+}
+
+.loading-bar-wrapper {
+    width: 100%;
+    height: calcvw(16);
+    background: $darkbrown;
+    overflow: hidden;
+    border-radius: 24px;
+    .loading-bar {
+        background: $gold;
+        width: 0;
+        height: 100%;
+    }
+}
+
+.banner-wrapper {
+    width: calcvw(724);
+    height: calcvw(430);
+    position: absolute;
+    left: calcvw(335);
+    top: calcvw(240);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+        font-size: calcvw(83);
+        color: $darkbrown;
+    }
+    .body {
+        color: $brown;
+        font-size: calcvw(36);
+    }
+    .getstarted {
+        border-radius: calcvw(32);
+        background: $gold;
+        border: solid 2px $darkbrown;
+        width: calcvw(221);
+        height: calcvw(56);
+        font-size: calcvw(24);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.landing-graphic {
+    width: calcvw(1585);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+}
