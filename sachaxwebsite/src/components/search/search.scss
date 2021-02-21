@@ -4,6 +4,7 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 .search-form {
@@ -14,7 +15,7 @@
 }
 .search-form-text {
     font-size: inherit;
-    color: $gold;
+    color: $brown;
     display: flex;
     align-items: center;
 }
@@ -37,6 +38,9 @@
     border: solid 1px $darkbrown;
     outline: none;
     background-color: $white;
+    &.small {
+        font-size: 18px;
+    }
 }
 
 //centered
@@ -56,6 +60,8 @@
     width: 100vw;
     height: 100vh;
     position: absolute;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .tag-wrapper {
@@ -72,6 +78,7 @@
     padding: 10px 30px;
     margin: 0 3px;
     background: $white;
+    font-size: 18px;
     border-radius: 32px;
     border: solid 2px $darkbrown;
     cursor: pointer;
@@ -87,19 +94,81 @@
 .search-results-wrapper {
     position: -webkit-sticky;
     position: sticky;
-    top: calcvw(361);
+    top: calcvw(178);
     left: calcvw(90);
     height: calc(100% - 180px);
     width: calcvw(1740);
-    background: red;
-
+    border-radius: 6px;
     display: flex;
+    margin-top: calcvw(361);
+    background: $brown;
+    overflow-y: scroll;
     > * {
+        border-radius: 6px;
         width: 50%;
-        background: yellow;
+        background: $brown;
     }
+}
+
+.search-results-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.search-results-map {
+    position: sticky;
+    top: 0;
 }
 
 .card-wrapper {
     width: 382px;
+    position: relative;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 55px 0;
+
+    transition: transform 300ms;
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    > * {
+        width: 343px;
+        position: relative;
+        z-index: 2;
+    }
+    .card-image {
+        height: 238px;
+    }
+    .card-tags {
+        display: flex;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        color: $brown;
+        margin: 10px 0;
+        .card-tag {
+            margin-right: 10px;
+        }
+    }
+    .card-desc {
+        .card-body {
+            font-weight: bold;
+        }
+        margin: 10px 0;
+    }
+    .card-background {
+        position: absolute;
+        z-index: 1;
+        background: $white;
+        justify-content: center;
+        top: 10%;
+        width: 100%;
+        height: 90%;
+        border-radius: 6px;
+    }
 }

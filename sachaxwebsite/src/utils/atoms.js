@@ -16,3 +16,8 @@ export const atom_SearchParams = atom({
         location: 'not selected'
     }, // default value (aka initial value)
 });
+
+export const atom_AboutHover = atom({
+    key: 'atom_AboutHover',
+    default: ''
+})

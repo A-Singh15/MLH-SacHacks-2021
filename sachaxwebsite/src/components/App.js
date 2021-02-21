@@ -9,6 +9,7 @@ import './App.scss'
 
 import Home from './home/home'
 import Search from './search/search'
+import About from './about/about'
 
 import { logoWithName } from '../assets/assets'
 
@@ -82,7 +83,7 @@ const routes = [
   }, {
     to: '/about',
     children: <div className='nav-about'>About</div>,
-    component: <Search />,
+    component: <About />,
     navbar: true
   }, {
     to: '/',

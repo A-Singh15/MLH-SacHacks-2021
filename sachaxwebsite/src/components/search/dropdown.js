@@ -29,7 +29,7 @@ const fadeInUp = {
         left: '50%',
         width: '60vw',
         height: '5vw',
-        fontSize: calcvw(24)
+        fontSize: calcvw(36)
     },
     jumbo: {
         opacity: 1,
@@ -38,8 +38,8 @@ const fadeInUp = {
         top: '50%',
         left: '50%',
         width: '60vw',
-        height: '5vw',
-        fontSize: calcvw(24)
+        height: calcvw(48),
+        fontSize: calcvw(36)
     }
 }
 
@@ -135,7 +135,7 @@ const fadeInDown = {
         left: '0',
         width: '60vw',
         height: '5vw',
-        fontSize: calcvw(24),
+        fontSize: calcvw(36),
         backgroundSize: '3vw',
     },
     after: {
@@ -145,8 +145,8 @@ const fadeInDown = {
         top: '0',
         left: '0',
         width: calcvw(1200),
-        height: calcvw(64),
-        fontSize: calcvw(24),
+        height: calcvw(48),
+        fontSize: calcvw(36),
         backgroundSize: '2vw',
     }
 }
@@ -174,7 +174,7 @@ export function SearchArea() {
             initial={fadeInDown.before}
             animate={fadeInDown.after}
             exit={fadeInUp.before}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5 }}
             className='motion-search'
         >
             <>
@@ -184,7 +184,7 @@ export function SearchArea() {
                 </span>
                     <select
                         defaultValue={searchParams.searchType}
-                        className='search-dropdown'
+                        className='search-dropdown small'
                         name="searchType" ref={register}>
                         <option value="not selected" disabled>Choose a Type</option>
                         <option value="OnlineEvent"> Online Event  </option>
@@ -196,7 +196,7 @@ export function SearchArea() {
                 </div>
                     <select
                         defaultValue={searchParams.location}
-                        className='search-dropdown'
+                        className='search-dropdown small'
                         name="location" ref={register}>
                         <option value="not selected" disabled>Choose a Location</option>
                         <option value="Sacramento">Sacramento, CA</option>
@@ -214,7 +214,7 @@ function TagWrapper() {
 
     //need to fetch tags in type and area
     //for now use fake tags
-    const tags = ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest', '#smallbusiness', '#foodassistance', '#evictionprotection', '#mortgagerelief', 'unemployment', '#careercounseling', '#healthcare', '#pantrydrive', '#tutoring', '#mentalhealth', '#jobs', '#freshvegetables', '#scholarships', '#today', '#covidupdate', '#spanish', '#korean', '#hmong', '#education', '#freefood', "forbearance", "studentloans"]
+    const tags = ['#freecovidtest', '#freefood', '#freemasks', '#rapidcovidtest', '#smallbusiness', '#foodassistance', '#evictionprotection', '#mortgagerelief', '#unemployment', '#careercounseling', '#healthcare', '#pantrydrive', '#tutoring', '#mentalhealth', '#jobs', '#freshvegetables', '#scholarships', '#today', '#covidupdate', '#spanish', '#korean', '#hmong', '#education', "#forbearance", "#studentloans"]
     return (
         <div className='tag-wrapper'>
             {tags.map((item, index) => (
