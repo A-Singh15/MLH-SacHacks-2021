@@ -97,7 +97,7 @@ function EnterButton(props) {
     const userCreateValues = useRecoilValue(userCreateValuesAtom)
     const userLoginValues = useRecoilValue(userLoginValuesAtom)
     var handleClick = (e) => {
-        console.log('hello, handleclick is not set for enter button!!!')
+        console.log('handleclick not set!!!')
     }
 
     function emailsignin(values) {

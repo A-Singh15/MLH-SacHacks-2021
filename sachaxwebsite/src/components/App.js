@@ -86,17 +86,17 @@ function NavBar() {
 const routes = [
   {
     to: '/account',
-    children: <div className='nav-account'>Account</div>,
+    children: <div className='nav-account'>ACCOUNT</div>,
     component: <Login />,
     navbar: true
   }, {
     to: '/search',
-    children: <div className='nav-search'>Search</div>,
+    children: <div className='nav-search'>SEARCH</div>,
     component: <Search />,
     navbar: true
   }, {
     to: '/about',
-    children: <div className='nav-about'>About</div>,
+    children: <div className='nav-about'>ABOUT US</div>,
     component: <About />,
     navbar: true
   }, {
