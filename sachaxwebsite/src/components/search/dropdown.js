@@ -227,11 +227,12 @@ export function SearchArea() {
                         defaultValue={searchParams.location}
                         className='search-dropdown small'
                         name="location" ref={register}>
-                        <option value="not selected" disabled>Choose a Location</option>
-                        <option value="Sacramento">Sacramento, CA</option>
-                        <option value="Torrance">Torrance, CA</option>
-                        <option value="Antartica">Antartica</option>
+                        <option value="not selected" disabled>somewhere</option>
+                        {cities.map(item => (
+                            <option value={item}>{item}</option>
+                        ))}
                     </select>
+
                 </form>
                 <TagWrapper />
             </>
