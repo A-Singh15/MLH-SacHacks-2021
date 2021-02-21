@@ -8,9 +8,9 @@
 .about-svg {
     position: absolute;
     left: 50vw;
-    top: 200px;
-    width: 1106px;
-    transform: translate(-1px * 1040/2);
+    top: calcvw(345);
+    width: calcvw(966);
+    transform: translate(calcvw(966) / -2);
     z-index: 2;
 }
 
@@ -18,8 +18,9 @@
     position: absolute;
     z-index: 1;
     width: 100vw;
-    top: 80.3vh;
-    height: 19.7vh;
+    top: calcvw(827);
+    //height: 19.7vh;
+    bottom: 0;
     background-color: $brown;
 }
 
@@ -37,6 +38,7 @@
     position: absolute;
     width: calcvw(369);
     opacity: 0;
+    font-size: calcvw(18);
     &.active {
         opacity: 1;
     }
@@ -44,22 +46,39 @@
         color: $brown;
     }
     &.Brandon {
-        top: calcvw(257);
+        top: calcvw(379);
         left: calcvw(90);
         text-align: right;
     }
     &.Mai {
-        top: calcvw(257);
+        top: calcvw(386);
         left: calcvw(1486);
     }
     &.Sally {
-        top: calcvw(457);
+        top: calcvw(541);
         left: calcvw(90);
         text-align: right;
     }
     &.PPoPPi {
-        top: calcvw(457);
+        top: calcvw(541);
         left: calcvw(1486);
+    }
+}
+
+.about-header {
+    position: absolute;
+    top: calcvw(156);
+    height: calcvw(180);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: calcvw(55);
+    width: calcvw(480);
+    color: $brown;
+    left: 50vw - calcvw(480/2);
+    > .about-heart {
+        width: calcvw(76);
     }
 }
 

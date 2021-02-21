@@ -32,13 +32,13 @@ const bigQ = {
     initial: {
         opacity: 0,
         y: '-16vw',
-        x: calcvw(-753 / 2),
+        x: calcvw(-990 / 2),
         scale: 0.8,
     },
     animate: {
         opacity: 1,
         y: '-12vw',
-        x: calcvw(-753 / 2),
+        x: calcvw(-990 / 2),
         scale: 1
     }
 }

@@ -4,6 +4,8 @@ import { Aboutsvg } from './profile_illust'
 import { useState } from 'react'
 import foreach from 'lodash.foreach'
 
+import { heartSVG } from '../../assets/assets'
+
 export default function About() {
     const [brandon, setBrandon] = useState(false)
     const [mai, setMai] = useState(false)
@@ -13,19 +15,34 @@ export default function About() {
     const people = {
         brandon: [brandon, setBrandon, {
             name: 'Brandon Choi (he/him/his)',
-            desc: 'Brandon is a third year student majoring in Mathematics at UC Riverside. He worked on fullstack and little bit of devops using React, Express, and Nginx on Digital Ocean.'
+            desc: (<>
+                Brandon is a third year student majoring in Mathematics at UC Riverside. He worked on fullstack and little bit of devops using React, Express, and Nginx on Digital Ocean. Check out more of his work on his
+                {' '}{' '}<a href='https://brandon-choi.info'>portfolio!</a>
+            </>
+            )
         }],
         mai: [mai, setMai, {
             name: 'Mai Moua Vang (she/her/hers)',
-            desc: 'Mai Moua is a UX designer and UC Davis alumna. For this project, she worked on literature review, personas, competitive analysis, information architecture, user flows, and lo-fi wireframes. You can find more of her work on her portfolio.'
+            desc: (<>
+                Mai Moua is a UX designer and UC Davis alumna. For this project, she worked on literature review, personas, competitive analysis, information architecture, user flows, and lo-fi wireframes. You can find more of her work on her
+                {' '}<a href='https://www.maimouavang.com/'>portfolio!</a>
+            </>)
         }],
         sally: [sally, setSally, {
             name: 'Sally Kim (she/her/hers)',
-            desc: 'Sally is a third year student majoring in Design at UC Davis. For this project, she worked on all visuals and aesthetics, including brand identity,  vector illustrations, and the User Interface (UI) design. See more of her work on her instagram or her portfolio!'
+            desc: (<>
+                Sally is a third year student majoring in Design at UC Davis. For this project, she worked on all visuals and aesthetics, including brand identity,  vector illustrations, and the User Interface (UI) design. See more of her work on her
+                {' '}
+                <a href='https://behance.net/sallyhyunjikim/'>portfolio</a>
+                {' '}
+            or her
+                {' '}
+                <a href='https://instagram.com/kongee_illust'>portfolio!</a>
+            </>)
         }],
         ppoppi: [ppoppi, setPpoppi, {
             name: 'PPoPPi (undisclosed)',
-            desc: 'cute dog'
+            desc: 'cute dog!'
         }],
     }
 
@@ -43,7 +60,12 @@ export default function About() {
 
     return (
         <div className='about-page'>
-
+            <div className='about-header'>
+                ABOUT THE TEAM
+                <div className='about-heart'>
+                    {heartSVG}
+                </div>
+            </div>
             {infoArr}
             <div className='about-svg'>
                 <Aboutsvg handleHover={handleHover} />

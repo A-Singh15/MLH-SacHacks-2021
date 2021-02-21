@@ -101,12 +101,13 @@ export default function Dropdown(props) {
                 </span>
                 <select
                     defaultValue={'not selected'}
+                    //placeholder='something'
                     className='search-dropdown small'
                     name="searchType" ref={register}>
-                    <option value="not selected" disabled>Choose a Type</option>
-                    <option value="OnlineEvent"> Online Event  </option>
-                    <option value="Resources">   Resources </option>
-                    <option value="Services">  Services </option>
+                    <option value="not selected" disabled>something</option>
+                    <option value="OnlineEvent"> online events  </option>
+                    <option value="Resources">   resources </option>
+                    <option value="Services">  services </option>
                 </select>
                 <div className='search-form-text'>
                     around
@@ -115,16 +116,43 @@ export default function Dropdown(props) {
                     defaultValue={'not selected'}
                     className='search-dropdown small'
                     name="location" ref={register}>
-                    <option value="not selected" disabled>Choose a Location</option>
-                    <option value="Sacramento">Sacramento, CA</option>
-                    <option value="Torrance">Torrance, CA</option>
-                    <option value="Antartica">Antartica</option>
+                    <option value="not selected" disabled>somewhere</option>
+                    {cities.map(item => (
+                        <option value={item}>{item}</option>
+                    ))}
                 </select>
             </form>
         </motion.div>
     )
 
 }
+
+const cities = [
+    'Antelope',
+    'Carmichael',
+    'Citrus Heights',
+    'Courtland',
+    'Elk Grove',
+    'Elverta',
+    'Fair Oaks',
+    'Folsom',
+    'Galt',
+    'Herald',
+    'Hood',
+    'Isleton',
+    'Mather',
+    'Mcclellan',
+    'North Highlands',
+    'Orangevale',
+    'Rancho Cordova',
+    'Rio Linda',
+    'Ryde',
+    'Sacramento',
+    'Sloughhouse',
+    'Walnut Grove',
+    'Wilton',
+]
+
 
 const fadeInDown = {
     before: {
@@ -184,12 +212,13 @@ export function SearchArea() {
                 </span>
                     <select
                         defaultValue={searchParams.searchType}
+                        placeholder="something"
                         className='search-dropdown small'
                         name="searchType" ref={register}>
-                        <option value="not selected" disabled>Choose a Type</option>
-                        <option value="OnlineEvent"> Online Event  </option>
-                        <option value="Resources">   Resources </option>
-                        <option value="Services">  Services </option>
+                        <option value="not selected" disabled>something</option>
+                        <option value="OnlineEvent"> online events  </option>
+                        <option value="Resources">   resources </option>
+                        <option value="Services">  services </option>
                     </select>
                     <div className='search-form-text'>
                         around
@@ -214,7 +243,7 @@ function TagWrapper() {
 
     //need to fetch tags in type and area
     //for now use fake tags
-    const tags = ['#freecovidtest', '#freefood', '#freemasks', '#rapidcovidtest', '#smallbusiness', '#foodassistance', '#evictionprotection', '#mortgagerelief', '#unemployment', '#careercounseling', '#healthcare', '#pantrydrive', '#tutoring', '#mentalhealth', '#jobs', '#freshvegetables', '#scholarships', '#today', '#covidupdate', '#spanish', '#korean', '#hmong', '#education', "#forbearance", "#studentloans"]
+    const tags = ['#freecovidtest', '#freefood', '#freemasks', '#rapidcovidtest', '#smallbusiness', '#foodassistance', '#evictionprotection', '#mortgagerelief', '#unemployment']
     return (
         <div className='tag-wrapper'>
             {tags.map((item, index) => (
