@@ -35,7 +35,7 @@ const fadeInUp = {
         opacity: 1,
         y: '-2.5vw',
         x: '-30vw',
-        top: '50%',
+        top: '57%',
         left: '50%',
         width: '60vw',
         height: calcvw(48),

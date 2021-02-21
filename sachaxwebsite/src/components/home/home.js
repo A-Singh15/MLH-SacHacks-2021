@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import './home.scss'
 
-import { logo } from '../../assets/assets'
+import { logo, landing } from '../../assets/assets'
 import { useHistory } from 'react-router-dom'
 import { atom_Loading } from '../../utils/atoms'
 import { useRecoilState } from 'recoil'
@@ -35,7 +35,7 @@ export default function Home() {
     return (
         <>
             <AnimatePresence>
-                {loading ? (
+                {loading && (
                     <>
                         <motion.div
                             initial={fadeDown.before}
@@ -67,17 +67,20 @@ export default function Home() {
                             exit={fadeDown.before}
                             className='backdrop' />
                     </>
-                ) : (
-                        <motion.div
-                            initial={fadeDown.before}
-                            animate={fadeDown.after}
-                            exit={fadeDown.before}
-                            key='bdas12'
+                )}
+                <motion.div
+                    initial={fadeDown.before}
+                    animate={fadeDown.after}
+                    exit={fadeDown.before}
+                    key='bdas12'
 
-                        >
-                            <Banner />
-                        </motion.div>
-                    )}
+                >
+                    <Banner />
+                    <div className='landing-graphic'>
+                        {landing}
+                    </div>
+                </motion.div>
+
             </AnimatePresence>
 
         </>

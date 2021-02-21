@@ -54,6 +54,16 @@
     position: absolute;
     left: 50vw;
     top: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .big-heart {
+        width: calcvw(72);
+        margin-bottom: 20px;
+    }
 }
 
 .search-content {

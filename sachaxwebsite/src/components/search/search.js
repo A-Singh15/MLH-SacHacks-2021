@@ -13,6 +13,8 @@ import { atom_SearchParams } from '../../utils/atoms'
 import covidpng from './covidcard.png'
 import { useHistory } from 'react-router-dom'
 
+import { heartSVG } from '../../assets/assets'
+
 const fadeInUp = {
     initial: {
         opacity: 0,
@@ -84,6 +86,16 @@ export default function Search() {
                             key='bigQ'
                             className='bigQ'
                         >
+                            <motion.div
+                                animate={{ y: '10px' }}
+                                transition={{
+                                    repeat: Infinity,
+                                    repeatType: "reverse",
+                                    duration: 1
+                                }}
+                                className='big-heart'>
+                                {heartSVG}
+                            </motion.div>
                             What are you looking for?
                         </motion.div>
                         <Dropdown />
