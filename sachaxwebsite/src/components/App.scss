@@ -11,6 +11,9 @@ body,
     color: $darkbrown;
     overflow: hidden;
 }
+input {
+    background: $white;
+}
 
 .nav-bar {
     position: absolute;

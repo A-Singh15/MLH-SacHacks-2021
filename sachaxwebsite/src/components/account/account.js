@@ -3,7 +3,7 @@ import './account.scss';
 
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Joi from 'joi';
 
 import { toast } from 'react-toastify';

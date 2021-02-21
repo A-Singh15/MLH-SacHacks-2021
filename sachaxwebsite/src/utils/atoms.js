@@ -63,3 +63,11 @@ export const userData_username = atom({
     key: 'userData_username',
     default: "undefined"
 })
+
+export const userCreateEventValuesAtom = atom({
+    key: 'userCreateEventValues',
+    default: {
+        username: "",
+        photoURL: "",
+    }
+})

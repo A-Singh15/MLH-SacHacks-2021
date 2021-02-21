@@ -11,6 +11,7 @@ import Search from './search/search'
 import About from './about/about'
 import Event from './event/event'
 import Login from './account/account'
+import Dashboard from './dashboard/dashboard'
 
 import { logoWithName } from '../assets/assets'
 
@@ -30,6 +31,13 @@ export default function App() {
               {<NavBar />}
             </>
           </Route>
+          <Route path={'/dashboard'} >
+            <>
+              <Dashboard />
+              {<NavBar />}
+            </>
+          </Route>
+
           {routes.map((item, index) => (
             <Route key={index} path={item.to} >
               <>
