@@ -2,7 +2,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   useHistory
 } from "react-router-dom";
 import './App.scss'
@@ -11,6 +10,7 @@ import Home from './home/home'
 import Search from './search/search'
 import About from './about/about'
 import Event from './event/event'
+import Login from './account/account'
 
 import { logoWithName } from '../assets/assets'
 
@@ -79,7 +79,7 @@ const routes = [
   {
     to: '/account',
     children: <div className='nav-account'>Account</div>,
-    component: <Search />,
+    component: <Login />,
     navbar: true
   }, {
     to: '/search',
