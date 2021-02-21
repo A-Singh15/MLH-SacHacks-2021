@@ -114,6 +114,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 
 .search-results-map {
@@ -158,6 +159,9 @@
     .card-desc {
         .card-body {
             font-weight: bold;
+        }
+        .card-address {
+            padding: 7px 0;
         }
         margin: 10px 0;
     }

@@ -11,6 +11,7 @@ import {
 import { atom_SearchParams } from '../../utils/atoms'
 
 import covidpng from './covidcard.png'
+import { useHistory } from 'react-router-dom'
 
 const fadeInUp = {
     initial: {
@@ -131,12 +132,9 @@ function SearchResults() {
                     width: searchParams.searchType == 'OnlineEvent' ? '100%' : '50%'
                 }}
             >
-                <SearchResultCard />
-                <SearchResultCard />
-                <SearchResultCard />
-                <SearchResultCard />
-                <SearchResultCard />
-                <SearchResultCard />
+                {resultData.map(item => (
+                    <SearchResultCard data={item} />
+                ))}
             </div>
             {searchParams.searchType !== 'OnlineEvent' && (
                 <SearchMap />
@@ -146,17 +144,70 @@ function SearchResults() {
     )
 }
 
+/**
+ * ANCHOR SEARCHCARDRESULT FAKE DATA
+ * 
+ */
+
+const resultData = [
+    {
+        tags: ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest',],
+        title: 'COVID-19 Relief: Free Testing & Masks',
+        address: '635 Anderson Rd, Davis, CA',
+        body: 'lorem ipsum!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, sed do...',
+        to: '/event/test'
+    },
+    {
+        tags: ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest',],
+        title: 'COVID-19 Relief: Free Testing & Masks',
+        address: '635 Anderson Rd, Davis, CA',
+        body: 'lorem ipsum!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, sed do...',
+        to: '/event/test'
+    },
+    {
+        tags: ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest',],
+        title: 'COVID-19 Relief: Free Testing & Masks',
+        address: '635 Anderson Rd, Davis, CA',
+        body: 'lorem ipsum!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, sed do...',
+        to: '/event/test'
+    },
+    {
+        tags: ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest',],
+        title: 'COVID-19 Relief: Free Testing & Masks',
+        address: '635 Anderson Rd, Davis, CA',
+        body: 'lorem ipsum!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, sed do...',
+        to: '/event/test'
+    },
+    {
+        tags: ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest',],
+        title: 'COVID-19 Relief: Free Testing & Masks',
+        address: '635 Anderson Rd, Davis, CA',
+        body: 'lorem ipsum!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, sed do...',
+        to: '/event/test'
+    },
+    {
+        tags: ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest',],
+        title: 'COVID-19 Relief: Free Testing & Masks',
+        address: '635 Anderson Rd, Davis, CA',
+        body: 'lorem ipsum!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, sed do...',
+        to: '/event/test'
+    }
+]
+
 /** 
  * ANCHOR SEARCH RESULT CARD
 */
 
-function SearchResultCard() {
-
+function SearchResultCard(props) {
+    let data = props.data
     const cardTags = ['#freecovidtest', '#freefood', 'freemasks', '#rapidcovidtest',]
+    let history = useHistory()
 
     return (
         <div className='card-wrapper'
-
+            onClick={e => {
+                history.push(data.to)
+            }}
         >
 
             <img className='card-image'
@@ -171,13 +222,13 @@ function SearchResultCard() {
                     ))}
                 </div>
                 <div className='card-title'>
-                    COVID-19 Relief: Free Testing & Masks
+                    {data.title}
                 </div>
                 <div className='card-address'>
-                    635 Anderson Rd, Davis, CA
+                    {data.address}
                 </div>
                 <div className='card-body'>
-                    lorem ipsum!!!!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, sed do...
+                    {data.body}
                 </div>
             </div>
             <div className='card-background'>

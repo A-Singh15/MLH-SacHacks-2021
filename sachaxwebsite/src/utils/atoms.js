@@ -21,3 +21,9 @@ export const atom_AboutHover = atom({
     key: 'atom_AboutHover',
     default: ''
 })
+
+
+export const atom_Loading = atom({
+    key: 'atom_Loading',
+    default: true
+})
