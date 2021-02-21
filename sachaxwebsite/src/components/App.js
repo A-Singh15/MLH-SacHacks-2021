@@ -10,11 +10,12 @@ import './App.scss'
 import Home from './home/home'
 import Search from './search/search'
 import About from './about/about'
+import Event from './event/event'
 
 import { logoWithName } from '../assets/assets'
 
 /**
- * ANCHOR: APP
+ * ANCHOR: APP 
  * 
  */
 
@@ -23,7 +24,12 @@ export default function App() {
     <div className="App">
       <Router>
         <Switch>
-
+          <Route path={'/event/:eventID'} >
+            <>
+              <Event />
+              {<NavBar />}
+            </>
+          </Route>
           {routes.map((item, index) => (
             <Route key={index} path={item.to} >
               <>
